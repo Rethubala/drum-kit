@@ -52,7 +52,12 @@ for(var i=0;i<numberOfDrums;i++){
 }
 
 function buttonAnimation(currentKey){
-  var activeButton = document.querySelector(".", currentKey)
-  activeButton.classList.add(".pressed")
+  var activeButton = document.querySelector("."+ currentKey)
+  activeButton.classList.add("pressed")
+//giving it a timer--------------------------
+  setTimeout(function()
+  {
+    activeButton.classList.remove("pressed");
+  },1000)
 }
    
