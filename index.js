@@ -6,9 +6,11 @@ for(var i=0;i<numberOfDrums;i++){
     var buttonSymbols = this.innerHTML;
         makeSound(buttonSymbols);
 
+        buttonAnimation(buttonSymbols);
 
         document.addEventListener("keypress",function(event){
             makeSound(event.key);
+            buttonAnimation(event.key);
         })
 
 
@@ -49,5 +51,8 @@ for(var i=0;i<numberOfDrums;i++){
     }});
 }
 
-
+function buttonAnimation(currentKey){
+  var activeButton = document.querySelector(".", currentKey)
+  activeButton.classList.add(".pressed")
+}
    
